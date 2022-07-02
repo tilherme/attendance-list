@@ -19,6 +19,7 @@ export function App() {
       })
     };
     setStudents((prevState: any) =>[...prevState, newStudent]);
+
   }
   
   useEffect(() => {
@@ -36,7 +37,7 @@ export function App() {
   return (
     <div className="container">
       <header>
-        <h1>Lista de presenca</h1>
+        <h1>Lista de presença</h1>
 
         <div>
           <strong>{user.name}</strong>
