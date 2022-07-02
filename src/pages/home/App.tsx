@@ -22,14 +22,15 @@ export function App() {
   }
   
   useEffect(() => {
-    fetch('https://api.github.com/users/tilherme')
-    .then(response => response.json())
-    .then(data => {
-setUser({
+   async function fetcHData(){
+    const response = await fetch('https://api.github.com/users/tilherme')
+    const data = await response.json();
+    setUser({
       name: data.name,
       avatar: data.avatar_url,
     })
-    })
+  }
+  fetcHData()
   },[])
 
   return (
