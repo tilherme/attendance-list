@@ -17,20 +17,26 @@ export function App() {
       })
     };
     setStudents((prevState: any) =>[...prevState, newStudent]);
-
   }
-
 
   return (
     <div className="container">
-      <h1>Nomes</h1>
+      <header>
+        <h1>Lista de presenca</h1>
+        
+        <div>
+          <strong>Guilherme Mateus</strong>
+          <img src="https://github.com/tilherme.png" alt="" />
+        </div>
+
+      </header>
       <input type="text" placeholder="Digite o nome..." onChange={e =>setStudantName(e.target.value)}/>
       <button type="button" onClick={handleAddStudent}>Adicionar</button>
       {
-        students.map((student: { name: any; time: any; }) =>  <Card name={student.name} time={student.time}/>)
+        students.map((student: { name: any; time: any; }) => 
+         <Card key={student.time} name={student.name} time={student.time}/>)
        
       }
-     
     </div>
   )
 }
